@@ -1,0 +1,2 @@
+Analyze the job description and return structured JSON with required_skills, preferred_skills,
+experience_required, cloud_platform, role_type, ats_keywords, tools, and technologies.

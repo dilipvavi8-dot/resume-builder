@@ -1,0 +1,4 @@
+interface:
+  display_name: "PDF Output Review"
+  short_description: "Review PDF-ready resume output safely"
+  default_prompt: "Use $pdf to validate a PDF resume output without changing source data."

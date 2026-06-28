@@ -4,10 +4,11 @@ __pycache__/
 *.egg-info/
 .venv/
 venv/
-dist/
-build/
+backend/.venv/
+backend/.venv.broken-*/
 .mypy_cache/
 .pytest_cache/
+backend/.pytest_cache/
 htmlcov/
 .coverage
 
@@ -15,12 +16,16 @@ htmlcov/
 .env
 .env.*
 !.env.example
+!backend/.env.example
+!frontend/.env.example
 
 # Node
 node_modules/
-dist/
+frontend/node_modules/
 .next/
+frontend/.next/
 .vite/
+frontend/test-results/
 
 # Terraform
 .terraform/
@@ -30,15 +35,31 @@ dist/
 !terraform.tfvars.example
 .terraform.lock.hcl
 
-# IDE
+# Rolecraft local runtime data
+backend/storage/job_resume_ai.db
+backend/storage/master_resume/
+backend/storage/resume_library/
+backend/storage/resume_drafts/
+backend/storage/generated_resumes/
+backend/storage/job_descriptions/
+backend/storage/exports/
+backend/storage/logs/
+resumes/base/**/*.pdf
+resumes/base/**/*.docx
+resumes/base/**/*.txt
+resumes/registry.json
+
+# Build and verification artifacts
+dist/
+build/
+test-artifacts/
+output/
+.playwright-cli/
+*.log
+
+# IDE and OS
 .vscode/
 .idea/
 *.swp
-
-# OS
 .DS_Store
 Thumbs.db
-
-# Build artifacts
-*.log
-test-artifacts/

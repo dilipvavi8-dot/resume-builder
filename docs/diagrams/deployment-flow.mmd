@@ -1,0 +1,15 @@
+flowchart TD
+    A[Developer changes code] --> B[Install dependencies]
+    B --> C[Backend compile check]
+    C --> D[Frontend lint]
+    D --> E[Next.js production build]
+    E --> F[Optional Playwright E2E test]
+    F --> G[Run ./run-local.sh]
+    G --> H[Uvicorn on 127.0.0.1:8000]
+    G --> I[Next.js dev server on localhost:3001]
+    H --> J[Local browser verification]
+    I --> J
+    K[Docker / KITT / Helm / Kubernetes / Sonar / TestHub] -. not configured in this repository .-> L[No current deployment pipeline]
+
+    style G fill:#1e5b43,color:#fff
+    style L fill:#5d3d20,color:#fff

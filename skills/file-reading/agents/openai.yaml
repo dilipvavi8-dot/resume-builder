@@ -1,0 +1,4 @@
+interface:
+  display_name: "File Reading"
+  short_description: "Route local resume and JD files safely"
+  default_prompt: "Use $file-reading to identify and extract a local resume or JD file."

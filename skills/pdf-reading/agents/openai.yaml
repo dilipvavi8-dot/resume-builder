@@ -1,0 +1,4 @@
+interface:
+  display_name: "PDF Reading"
+  short_description: "Extract local PDF resume and JD text"
+  default_prompt: "Use $pdf-reading to extract text from a local PDF resume or JD."

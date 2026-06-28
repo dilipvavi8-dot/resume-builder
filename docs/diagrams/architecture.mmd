@@ -1,0 +1,16 @@
+flowchart LR
+    User[User in local browser] --> FE[Next.js frontend<br/>localhost:3001]
+    FE -->|HTTP / multipart| API[FastAPI API<br/>127.0.0.1:8000]
+    FE <-->|WebSocket events| WS[/ws/events]
+    API --> Routes[Thin API routes<br/>backend/main.py]
+    Routes --> Services[Domain services]
+    Services --> SQLite[(SQLite database<br/>Application Support/Rolecraft)]
+    Services --> Files[Local files<br/>profiles, drafts, DOCX/PDF]
+    Services --> Scheduler[APScheduler<br/>daily local job refresh]
+    Services --> Agents[Resume updater, tailorer,<br/>quality monitor]
+    API --> WS
+    Scheduler --> Services
+
+    style User fill:#264c70,color:#fff
+    style FE fill:#1e5b43,color:#fff
+    style API fill:#5d3d20,color:#fff

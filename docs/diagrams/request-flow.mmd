@@ -1,0 +1,22 @@
+flowchart TD
+    A[User action in Next.js page] --> B[frontend/src/lib/api.ts]
+    B --> C{NEXT_PUBLIC_API_URL set?}
+    C -->|Yes| D[Use configured FastAPI URL]
+    C -->|No| E[Use http://127.0.0.1:8000]
+    D --> F[FastAPI route in backend/main.py]
+    E --> F
+    F --> G{Request valid?}
+    G -->|No| H[Return clear 4xx error]
+    G -->|Yes| I[Service layer]
+    I --> J[(SQLite and/or local files)]
+    J --> K[JSON or file response]
+    K --> L[UI success state]
+    H --> M[api.ts throws message]
+    M --> N[UI error state]
+    I --> O{Unexpected failure?}
+    O -->|Yes| P[FastAPI 5xx response]
+    P --> M
+
+    style H fill:#5d3d20,color:#fff
+    style P fill:#4a3030,color:#fff
+    style L fill:#1e5b43,color:#fff

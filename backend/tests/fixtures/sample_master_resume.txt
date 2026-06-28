@@ -1,0 +1,18 @@
+LOCAL TEST CANDIDATE
+Cloud Platform and Site Reliability Engineer
+
+SUMMARY
+Platform engineer with 8 years of experience designing AWS and Azure infrastructure,
+automating delivery, and improving production reliability.
+
+SKILLS
+AWS, Azure, Kubernetes, Docker, Terraform, Helm, Python, Bash, GitHub Actions,
+Jenkins, Prometheus, Grafana, OpenTelemetry, Linux, Networking, Security, CI/CD,
+Incident Management, SRE, DevOps.
+
+EXPERIENCE
+- Implemented reusable Terraform modules for secure multi-account AWS environments.
+- Automated Kubernetes deployments with Helm and GitHub Actions CI/CD pipelines.
+- Designed Prometheus, Grafana, and OpenTelemetry observability that improved MTTR.
+- Led incident response, reliability reviews, capacity planning, and SLO adoption.
+- Optimized cloud infrastructure and reduced recurring cost through rightsizing.

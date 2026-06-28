@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume Updater Agent"
+  short_description: "Truthful JD-to-resume drafting workflow"
+  default_prompt: "Use $resume-updater-agent to create an evidence-backed resume draft from a JD."

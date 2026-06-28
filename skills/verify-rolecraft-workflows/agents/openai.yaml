@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Rolecraft Workflows"
+  short_description: "Test Rolecraft APIs, UI, files, and local data"
+  default_prompt: "Use $verify-rolecraft-workflows to verify the Rolecraft application end to end after a change."

@@ -1,0 +1,27 @@
+flowchart LR
+    Start[run-local.sh] --> Check{Dependencies present?}
+    Check -->|Yes| Env[Create missing local env files]
+    Check -->|No| Fix[Install backend .venv and frontend node_modules]
+    Env --> Frontend[Next.js dev server<br/>localhost:3001]
+    Env --> Backend[Uvicorn FastAPI<br/>127.0.0.1:8000]
+
+    FrontendEnv[frontend/.env.local<br/>NEXT_PUBLIC_API_URL] --> ApiClient[frontend/src/lib/api.ts]
+    ApiClient -->|HTTP and multipart requests| Backend
+    Frontend <-->|WebSocket events| Backend
+
+    BackendEnv[backend/.env] --> Cors[FRONTEND_ORIGIN<br/>CORS allowlist]
+    BackendEnv --> Schedule[SCHEDULER_HOUR and SCHEDULER_MINUTE]
+    BackendEnv --> OptionalKey[OPENAI_API_KEY<br/>optional]
+    Cors --> Backend
+    Schedule --> Scheduler[APScheduler daily refresh]
+    Scheduler --> Services[Domain services]
+
+    Backend --> Services
+    Services --> Database[(SQLite<br/>Application Support/Rolecraft)]
+    Services --> Files[Local file storage<br/>profiles, drafts, DOCX/PDF]
+    OptionalKey -. optional enhancement only .-> Services
+    Boundary[No cloud secret store, Docker,<br/>Kubernetes, CI/CD, or auto-apply] -. current boundary .-> Backend
+
+    style Backend fill:#5d3d20,color:#fff
+    style Frontend fill:#1e5b43,color:#fff
+    style Boundary fill:#4a3030,color:#fff

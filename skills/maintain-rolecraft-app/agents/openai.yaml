@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Rolecraft App"
+  short_description: "Modify Rolecraft safely across frontend and backend"
+  default_prompt: "Use $maintain-rolecraft-app to implement a feature or fix in the Rolecraft local job and resume assistant."

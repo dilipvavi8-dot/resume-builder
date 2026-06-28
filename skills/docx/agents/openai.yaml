@@ -1,0 +1,4 @@
+interface:
+  display_name: "DOCX Resume Editing"
+  short_description: "Preserve DOCX resume structure during edits"
+  default_prompt: "Use $docx to safely inspect or edit a Rolecraft DOCX resume."
