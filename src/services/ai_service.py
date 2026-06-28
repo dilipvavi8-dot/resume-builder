@@ -25,9 +25,21 @@ class AISuggestionService:
     ]
 
     SKILL_SUGGESTIONS = [
-        "Python", "FastAPI", "React", "TypeScript", "AWS", "Docker",
-        "Kubernetes", "Terraform", "PostgreSQL", "Redis", "GraphQL",
-        "CI/CD", "Agile", "REST APIs", "Microservices",
+        "Python",
+        "FastAPI",
+        "React",
+        "TypeScript",
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "Terraform",
+        "PostgreSQL",
+        "Redis",
+        "GraphQL",
+        "CI/CD",
+        "Agile",
+        "REST APIs",
+        "Microservices",
     ]
 
     def suggest(self, section: str, context: str, current_text: Optional[str] = None) -> List[str]:
@@ -38,9 +50,7 @@ class AISuggestionService:
                 f"Strategic thinker with deep knowledge of {context[:40]} and proven success.",
             ]
         elif section == "bullets":
-            return [
-                f"{starter}{context[:30]}..." for starter in self.BULLET_STARTERS[:4]
-            ]
+            return [f"{starter}{context[:30]}..." for starter in self.BULLET_STARTERS[:4]]
         elif section == "skills":
             keywords = context.lower().split()
             matched = [s for s in self.SKILL_SUGGESTIONS if s.lower() in keywords]

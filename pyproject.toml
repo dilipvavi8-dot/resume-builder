@@ -1,3 +1,9 @@
+[project]
+name = "resume-builder"
+version = "1.0.0"
+description = "FastAPI backend for creating, managing, exporting, and improving resumes."
+requires-python = ">=3.11,<3.13"
+
 [tool.black]
 line-length = 100
 target-version = ['py311']

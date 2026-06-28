@@ -2,7 +2,6 @@
 
 import uuid
 from fastapi import APIRouter, HTTPException, status
-from typing import List
 
 from src.models.resume import (
     ResumeData,
@@ -27,7 +26,11 @@ ai_service = AISuggestionService()
 async def create_resume(resume_data: ResumeData):
     resume_id = str(uuid.uuid4())
     created = resume_service.save(resume_id, resume_data)
-    return ResumeResponse(id=resume_id, message="Resume created successfully", data=created)
+    return ResumeResponse(
+        id=resume_id,
+        message="Resume created successfully",
+        data=created,
+    )
 
 
 @router.get(
